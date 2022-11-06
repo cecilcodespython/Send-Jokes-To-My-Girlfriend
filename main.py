@@ -16,9 +16,13 @@ def wAppMessage():
 
     return message
 
-schedule.every().day.at("17:45").do(wAppMessage)
+schedule.every().day.at("19:00").do(wAppMessage)
+
+def run():
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
 
 
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+if __name__ == "__main__":
+    run()
